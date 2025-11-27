@@ -1,8 +1,15 @@
-function App() {
-  const [count, setCount] = useState(0)
+import Layout from './components/Layout.jsx'
+import Grid from './components/Grid.jsx'
 
+function App() {
   return (
-    <></>
+
+      <Layout>
+        <main>
+          <Grid />
+        </main>
+      </Layout>
+
   )
 }
 
