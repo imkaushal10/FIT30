@@ -63,6 +63,37 @@ export default function WorkoutCard(props) {
                         })}
                 </div>
 
+                <div className="workout-grid">
+                                <div className="exercise-name">
+                                    <h4>Workout</h4>
+                                </div>
+                                <h6>Sets</h6>
+                                <h6>Reps</h6>
+                                <h6 className="weight-input">Max Weight</h6>
+                                {workout.map((workoutExercise, wIndex) => {
+                                    return (
+                                        <React.Fragment key={wIndex}>
+                                            <div className="exercise-name">
+                                                <p>{wIndex + 1}. {workoutExercise.name}</p>
+                                                <button onClick={() => {
+                                                    setShowExerciseDescription({
+                                                        name: workoutExercise.name,
+                                                        description: exerciseDescriptions[workoutExercise.name]
+                                                    })
+                                                }} className="help-icon">
+                                                    <i className="fa-regular fa-circle-question" />
+                                                </button>
+                                            </div>
+                                            <p className="exercise-info">{workoutExercise.sets}</p>
+                                            <p className="exercise-info">{workoutExercise.reps}</p>
+                                            <input value={weights[workoutExercise.name] || ''} onChange={(e) => {
+                                                handleAddWeight(workoutExercise.name, e.target.value)
+                                            }} className="weight-input" placeholder="14" />
+                                        </React.Fragment>
+                                    )
+                                })}
+                    </div>
+
         </div>
     )
 }
