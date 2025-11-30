@@ -34,6 +34,35 @@ export default function WorkoutCard(props) {
                 </div>
             </div>
 
+            <div className="workout-grid">
+                        <div className="exercise-name">
+                            <h4>Warmup</h4>
+                        </div>
+                        <h6>Sets</h6>
+                        <h6>Reps</h6>
+                        <h6 className="weight-input">Max Weight</h6>
+                        {warmup.map((warmupExercise, warmupIndex) => {
+                            return (
+                                <React.Fragment key={warmupIndex}>
+                                    <div className="exercise-name">
+                                        <p>{warmupIndex + 1}. {warmupExercise.name}</p>
+                                        <button onClick={() => {
+                                            setShowExerciseDescription({
+                                                name: warmupExercise.name,
+                                                description: exerciseDescriptions[warmupExercise.name]
+                                            })
+                                        }} className="help-icon">
+                                            <i className="fa-regular fa-circle-question" />
+                                        </button>
+                                    </div>
+                                    <p className="exercise-info">{warmupExercise.sets}</p>
+                                    <p className="exercise-info">{warmupExercise.reps}</p>
+                                    <input className="weight-input" placeholder="N/A" disabled />
+                                </React.Fragment>
+                            )
+                        })}
+                </div>
+
         </div>
     )
 }
