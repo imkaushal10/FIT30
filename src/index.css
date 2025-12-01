@@ -25,3 +25,33 @@ header {
 header h1 {
   width: fit-content; // Ensured the header title fits its content
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+// Added styles for rule items
+.rule-item {
+    display: flex;
+    gap: 1rem;
+}
+
+// Ensured the first paragraph in rule-item has a minimum width
+.rule-item p:first-of-type {
+    min-width: 60px;
+}
+
+// Added padding for headings and training plan grid
+h3,
+.training-plan-grid {
+    padding-top: 2rem;
+}
+
+.training-plan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
