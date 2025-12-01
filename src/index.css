@@ -123,3 +123,48 @@ h3,
     align-items: center;
     gap: 1rem;
 }
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0 2rem 0;
+    text-align: center;
+}
+
+input:disabled {
+    cursor: not-allowed;  // Indicate disabled state
+    opacity: 0.6;
+}
+
+button.help-icon {
+    pointer-events: none;   // Disable interactions by default
+    opacity: 0;
+    padding: 0 0.5rem;
+    color: var(--color-link);
+    border: unset;
+    box-shadow: unset;   // Remove any box shadow
+    transform: unset;   // Reset any transformations
+    width: fit-content;
+}
+
+
+// Added hover effect for help-icon button
+button.help-icon:hover {
+    transform: unset;
+    box-shadow: unset;
+    opacity: 0.7;
+}
+
+.exercise-name:hover button.help-icon {
+    pointer-events: all;
+    opacity: 1;
+}
+
+.exercise-info {
+    margin: auto 0;
+}
+
+.skill-name {
+    text-transform: capitalize;
+}
