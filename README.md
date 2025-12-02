@@ -23,3 +23,74 @@ Prerequisites
 - PostgreSQL (or use SQLite for quick local runs)
 - npm or yarn
 - (Optional) Docker & Docker Compose
+
+1. Clone
+```bash
+git clone <repo-url> FIT30
+cd FIT30
+```
+
+2. Create environment files
+- server/.env
+```
+PORT=4000
+DATABASE_URL=postgres://user:pass@localhost:5432/fit30
+JWT_SECRET=your_jwt_secret
+```
+
+- client/.env (if needed)
+```
+REACT_APP_API_URL=http://localhost:4000/api
+```
+
+3. Install dependencies
+```bash
+# server
+cd server
+npm install
+
+# client
+cd ../client
+npm install
+```
+
+4. Run in development
+```bash
+# in two terminals
+
+# server
+cd server
+npm run dev
+
+# client
+cd client
+npm start
+```
+
+API will be available at http://localhost:4000 (or configured PORT) and the frontend at http://localhost:3000.
+
+## Scripts (example)
+- server
+    - npm run dev — start server in dev mode (nodemon)
+    - npm start — start production server
+    - npm test — run backend tests
+- client
+    - npm start — run dev frontend
+    - npm run build — build production assets
+    - npm test — run frontend tests
+
+## Database
+- Run migrations/seeds (depending on setup)
+```bash
+cd server
+npm run migrate
+npm run seed
+```
+- For simple local dev, configure DATABASE_URL to a local SQLite file or use Docker Compose.
+
+## Docker (optional)
+A simple docker-compose.yml can launch the API, frontend, and Postgres. Example:
+```bash
+docker-compose up --build
+```
+
