@@ -94,3 +94,26 @@ A simple docker-compose.yml can launch the API, frontend, and Postgres. Example:
 docker-compose up --build
 ```
 
+## Folder structure (suggested)
+- client/ — React app
+- server/ — Express API
+    - src/
+        - controllers/
+        - models/
+        - routes/
+        - services/
+- scripts/ — utility scripts
+- docker-compose.yml
+- .env.example
+
+## Testing
+- Unit and integration tests for backend and frontend where applicable:
+```bash
+cd server && npm test
+cd client && npm test
+```
+
+## Contributing
+- Fork -> feature branch -> PR
+- Follow coding style (prettier / eslint)
+- Include tests for new features
