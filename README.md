@@ -117,3 +117,11 @@ cd client && npm test
 - Fork -> feature branch -> PR
 - Follow coding style (prettier / eslint)
 - Include tests for new features
+
+## License
+Specify a license (e.g., MIT) in LICENSE file.
+
+## Contact
+Maintain repository issues/PRs for feedback and bug reports.
+
+Customize the sections above to reflect exact implementation details (endpoints, env vars, build steps, test commands).
