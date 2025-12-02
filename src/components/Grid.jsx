@@ -10,8 +10,8 @@ export default function Grid() {
         return entry.isComplete
     })
 
+    // Function to handle saving a workout
     function handleSave(index, data) {
-        // save to local storage and modify the saved workouts state
         const newObj = {
             ...savedWorkouts,
             [index]: {
@@ -24,13 +24,14 @@ export default function Grid() {
         setSelectedWorkout(null)
     }
 
+    // Function to handle completing a workout
     function handleComplete(index, data) {
-        // complete a workout (so basically we modify the completed status)
         const newObj = { ...data }
         newObj.isComplete = true
         handleSave(index, newObj)
     }
 
+    // Load saved workouts from localStorage on component mount
     useEffect(() => {
         if (!localStorage) { return }
         let savedData = {}

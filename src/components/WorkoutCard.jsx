@@ -9,12 +9,13 @@ export default function WorkoutCard(props) {
     const [showExerciseDescription, setShowExerciseDescription] = useState(null)
     const [weights, setWeights] = useState(savedWeights || {})
 
+    // Function to handle adding weight for an exercise
     function handleAddWeight(title, weight) {
         const newObj = {
             ...weights,
-            [title]: weight
+            [title]: weight     // Update or add the weight for the given exercise title
         }
-        setWeights(newObj)
+        setWeights(newObj)     // Update the state with the new weights object
     }
 
     return (
@@ -89,7 +90,7 @@ export default function WorkoutCard(props) {
                             <p className="exercise-info">{workoutExercise.reps}</p>
                             <input value={weights[workoutExercise.name] || ''} onChange={(e) => {
                                 handleAddWeight(workoutExercise.name, e.target.value)
-                            }} className="weight-input" placeholder="14" />
+                            }} className="weight-input" placeholder="14" />  
                         </React.Fragment>
                     )
                 })}
