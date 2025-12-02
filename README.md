@@ -1,16 +1,127 @@
-# React + Vite
+# FIT30
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack fitness app for 30-day programs: workout plans, progress tracking, user accounts, and simple analytics.
 
-Currently, two official plugins are available:
+## Features
+- Create, view, and follow 30-day workout programs
+- User authentication (register/login)
+- Track daily progress and completion
+- Personal notes and history
+- Responsive web UI and REST API
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech stack
+- Frontend: React (CRA / Vite)
+- Backend: Node.js + Express
+- Database: PostgreSQL (or SQLite for local dev)
+- Auth: JWT
+- Optional: Docker for local/dev environments
 
-## React Compiler
+## Quick start
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Prerequisites
+- Node.js >= 16
+- PostgreSQL (or use SQLite for quick local runs)
+- npm or yarn
+- (Optional) Docker & Docker Compose
 
-## Expanding the ESLint configuration
+1. Clone
+```bash
+git clone <repo-url> FIT30
+cd FIT30
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. Create environment files
+- server/.env
+```
+PORT=4000
+DATABASE_URL=postgres://user:pass@localhost:5432/fit30
+JWT_SECRET=your_jwt_secret
+```
+
+- client/.env (if needed)
+```
+REACT_APP_API_URL=http://localhost:4000/api
+```
+
+3. Install dependencies
+```bash
+# server
+cd server
+npm install
+
+# client
+cd ../client
+npm install
+```
+
+4. Run in development
+```bash
+# in two terminals
+
+# server
+cd server
+npm run dev
+
+# client
+cd client
+npm start
+```
+
+API will be available at http://localhost:4000 (or configured PORT) and the frontend at http://localhost:3000.
+
+## Scripts (example)
+- server
+    - npm run dev — start server in dev mode (nodemon)
+    - npm start — start production server
+    - npm test — run backend tests
+- client
+    - npm start — run dev frontend
+    - npm run build — build production assets
+    - npm test — run frontend tests
+
+## Database
+- Run migrations/seeds (depending on setup)
+```bash
+cd server
+npm run migrate
+npm run seed
+```
+- For simple local dev, configure DATABASE_URL to a local SQLite file or use Docker Compose.
+
+## Docker (optional)
+A simple docker-compose.yml can launch the API, frontend, and Postgres. Example:
+```bash
+docker-compose up --build
+```
+
+## Folder structure (suggested)
+- client/ — React app
+- server/ — Express API
+    - src/
+        - controllers/
+        - models/
+        - routes/
+        - services/
+- scripts/ — utility scripts
+- docker-compose.yml
+- .env.example
+
+## Testing
+- Unit and integration tests for backend and frontend where applicable:
+```bash
+cd server && npm test
+cd client && npm test
+```
+
+## Contributing
+- Fork -> feature branch -> PR
+- Follow coding style (prettier / eslint)
+- Include tests for new features
+
+## License
+Specify a license (e.g., MIT) in LICENSE file.
+
+## Contact
+Maintain repository issues/PRs for feedback and bug reports.
+
+Customize the sections above to reflect exact implementation details (endpoints, env vars, build steps, test commands).
