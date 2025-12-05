@@ -1,129 +1,104 @@
 # FIT30
 
-A full-stack fitness app for 30-day programs: workout plans, and progress tracking
+FIT30 is a client-side web application designed to guide users through a structured 30-day workout program. Users complete daily workouts, with each subsequent day unlocking only after the previous day is completed. All progress is saved locally without requiring user registration or login.
+Complete this training program if you want to:
+
+1. Follow a simple 30-day program with guaranteed results
+2. Get fit, healthy, strong and shredded
+3. Learn more about gym, training and technique
+4. Become a lifetime fitness buddy with FIT30 💛
 
 ## Features
 
-- Create, view, and follow 30-day workout programs
-- Track daily progress and completion
-- Responsive web UI and REST API
+📅 30-Day Progressive Program - Structured daily workouts with incremental difficulty
+🔒 Sequential Day Unlocking - Complete Day N to unlock Day N+1
+💾 Persistent Progress Tracking - Auto-save functionality using browser storage
+🚫 No Authentication Required - Zero-friction start, no registration needed
+📱 Responsive Design - Works seamlessly on desktop, tablet, and mobile
+🎓 Educational Content - Exercise instructions and technique guidance
+⚡ Fast & Lightweight - Client-side only, no backend dependencies
 
 ## Tech stack
 
 - Frontend: React (CRA / Vite)
 - Optional: Docker for local/dev environments
 
-## Quick start
+## 🚀 Quick Start
 
-1. Clone
+### Prerequisites
 
-```bash
-git clone <repo-url> FIT30
-cd FIT30
-```
+- Modern web browser (Chrome, Firefox, Safari, Edge)
+- No server or database required
 
-2. Create environment files
+### Installation
 
-- server/.env
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/yourusername/fit30.git
+   cd fit30
+   ```
+
+2. **Open in browser**
+
+   ```bash
+   # Simply open index.html in your browser
+   open index.html
+   
+   # Or use a local server (recommended)
+   npx serve
+   # or
+   python -m http.server 8000
+   ```
+
+3. **Start training!**
+   - Navigate to `http://localhost:8000`
+   - Begin with Day 1
+   - Complete exercises to unlock subsequent days
+
+## 📁 Project Structure
 
 ``` bash
-PORT=4000
-DATABASE_URL=postgres://user:pass@localhost:5432/fit30
-JWT_SECRET=your_jwt_secret
+fit30/
+├── index.html              # Main application entry point
+├── css/
+│   └── styles.css         # Application styles
+├── js/
+│   ├── app.js             # Main application logic
+│   ├── storage.js         # Progress persistence layer
+│   └── workouts.js        # 30-day workout data
+├── assets/
+│   ├── images/            # Exercise demonstrations
+│   └── icons/             # UI icons
+├── README.md
+└── LICENSE
 ```
 
-- client/.env (if needed)
+## 🤝 Contributing
 
-``` bash
-REACT_APP_API_URL=http://localhost:4000/api
-```
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-3. Install dependencies
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-```bash
-# server
-cd server
-npm install
+### Development Guidelines
 
-# client
-cd ../client
-npm install
-```
+- Keep it simple and client-side only
+- Maintain vanilla JavaScript (no framework dependencies)
+- Ensure mobile responsiveness
+- Write clear comments for workout data
+- Test across multiple browsers
 
-4. Run in development
+## 💡 Use Cases
 
-```bash
-# in two terminals
-
-# server
-cd server
-npm run dev
-
-# client
-cd client
-npm start
-```
-
-API will be available at http://localhost:4000 (or configured PORT) and the frontend at http://localhost:3000.
-
-## Scripts (example)
-
-- server
-    - npm run dev — start server in dev mode (nodemon)
-    - npm start — start production server
-    - npm test — run backend tests
-- client
-    - npm start — run dev frontend
-    - npm run build — build production assets
-    - npm test — run frontend tests
-
-## Database
-
-- Run migrations/seeds (depending on setup)
-```bash
-cd server
-npm run migrate
-npm run seed
-```
-- For simple local dev, configure DATABASE_URL to a local SQLite file or use Docker Compose.
-
-## Docker (optional)
-A simple docker-compose.yml can launch the API, frontend, and Postgres. Example:
-```bash
-docker-compose up --build
-```
-
-## Folder structure (suggested)
-
-- client/ — React app
-- server/ — Express API
-    - src/
-        - controllers/
-        - models/
-        - routes/
-        - services/
-- scripts/ — utility scripts
-- docker-compose.yml
-- .env.example
-
-## Testing
-
-- Unit and integration tests for backend and frontend where applicable:
-
-```bash
-cd server && npm test
-cd client && npm test
-```
-
-## Contributing
-
-- Fork -> feature branch -> PR
-- Follow coding style (prettier / eslint)
-- Include tests for new features
-
-## License
-
-Specify a license (e.g., MIT) in LICENSE file.
+- Personal fitness journey
+- Gym training companion
+- Home workout program
+- Fitness education tool
+- Habit building application
 
 ## Author
 
